@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+       {{>headerlink}}
+
+  </head>
+  <body>
+   {{>navbar}}
+
+   <!-- main header -->
+
+
+   <div class="container-fluid main_header">
+      <div class="main_content">
+
+        <form class="temp_form">
+
+             <input type="text" id="cityName" placeholder="Enter Your City Name" autocomplete="off">
+             <input type="submit" id="submitBtn" value="search">
+
+
+        </form>
+
+      </div>
+
+      <div class="tempinfo">
+        <div class="top_layer">
+            <p id="day">Sunday</p>
+            <p id="today_day">27 AUG</p>
+
+        </div>
+
+        <div class="main_layer">
+            <p id="city_name">Get Output Here</p>
+            <div class="middle_layer data_hide">
+                <p id="temp"><span id="temp_real_val">0</span><sup>o</sup>C</p>
+                <p id="temp_status"> <i class="fa-solid fa-cloud"></i></p>
+            </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+   </div>
+
+   <!-- footer code -->
+{{>footer}}
+<script src="js/main.js"></script>
+<script>
+  
+
+   const getcurday=()=>{
+    let weekday=new Array(7);
+    weekday[0]="Sunday";
+    weekday[1]="Monday";
+    weekday[0]="Tuesday";
+    weekday[0]="Wednesday";
+    weekday[0]="Thursday";
+    weekday[0]="Friday";
+    weekday[0]="Saturday";
+    
+
+    let curtime=new Date();
+    let days=weekday[curtime.getDay()];
+    let day=document.getElementById('day');
+    
+    day.innerText=days;
+   }
+    getcurday();
+
+</script>
+   
+  </body>
+</html>
