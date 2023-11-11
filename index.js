@@ -1,4 +1,6 @@
 const express= require("express")
+
+// import express from "express";
 const app=express();
 const port=process.env.PORT || 8000;
 
@@ -6,9 +8,9 @@ const port=process.env.PORT || 8000;
 
 const path=require("path");
 const hbs=require('hbs');
-const staticpath=path.join(__dirname,"../public");
-const temp_path=path.join(__dirname,"../templates/views");
-const partials_path=path.join(__dirname,"../templates/partials");
+const staticpath=path.join(__dirname,"/public");
+const temp_path=path.join(__dirname,"/templates/views");
+const partials_path=path.join(__dirname,"/templates/partials");
 
 
 app.set('view engine','hbs')
@@ -18,7 +20,7 @@ hbs.registerPartials(partials_path);
 //Routing
 
 app.get("/", (req, res)=>{
-    res.render('index')
+    res.render("index")
 });
 app.get("/about", (req, res)=>{
     res.render('about')
